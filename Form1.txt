@@ -1,0 +1,131 @@
+﻿/* Ariel Manalo
+ * Skill Test */
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net.Mail;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WFSCSkill1
+{
+    public partial class Form1 : Form
+    {
+        /* Here I've created instance fields, They can be accessed 
+         * everywhere within this specific class. I made them private
+         * so they can't be changed outside of this class. */
+        private string userName;
+        private string userEmail;
+        private string userNotes;
+        private string userAttach;
+        private StringBuilder body;
+        private SmtpClient smtpClient;
+        private MailMessage mailMessage;
+        private Attachment attachment;
+        private OpenFileDialog openFileDialog;
+        private DialogResult openResult;
+        private string filePath;
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            /* I added this here so I can access this mailMessage
+             * in both of my methods below. */
+            mailMessage = new MailMessage();
+
+        }
+
+        /* The following method happens when the send button is clicked on the form. */
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            /* The following lines take whatever the user has entered in
+             * the textboxes and puts them into the following variables. */
+            userName = tbUserName.Text;
+            userEmail = tbUserEmail.Text;
+            userNotes = tbUserNotes.Text;
+
+            /* The following is adding the username, useremail and usernotes
+             * to the a StringBuilder that will later be added into the body
+             * of the email. */
+
+            body = new StringBuilder();
+            body.AppendLine("Name: " + userName);
+            body.AppendLine("Email: " + userEmail);
+            body.AppendLine("Notes: " + userNotes);
+
+            /* The following is creating a SmtpClient. I will be using gmail
+             * as the host. In doing so, I have gained access into the sender 
+             * email, which is my email. */
+
+            smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new NetworkCredential("ariel.manalo14@gmail.com", "ypswhygatxpsahvs");
+
+            /* The following is creating the MailMessage. This includes adding
+             * the sender and the reciever, along with the actual content that will
+             * be included in the email, more specifically the subject, body and 
+             * attachements. */
+
+            mailMessage.From = new MailAddress("ariel.manalo14@gmail.com");
+            mailMessage.To.Add("ariel.manalo14@gmail.com");
+            mailMessage.Subject = "Skill Test";
+            mailMessage.Body = body.ToString();
+
+            /* The following is a try-catch statement. It is trying to send the 
+             * MailMessage using the SmtpClient that I both created above. If
+             * successful, it will output "success" on the form; if not successful, 
+             * an error will print in the console along with an output saying "failed"
+             * on the form. */
+            try
+            {
+                smtpClient.Send(mailMessage);
+                Console.WriteLine("sent successfully");
+                lblOutput.Text = "success";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("failed");
+                lblOutput.Text = "failed";
+            }
+
+        }
+
+        /* The following method happens when the attach button is clicked on the form. */
+        private void btnAttach_Click(object sender, EventArgs e)
+        {
+            /* When the button is clicked, the users file explorer is opened to their 
+             * files that are in their Desktop specifically. Additionally, it allows the user to choose
+             * any type of file. */
+            openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            openFileDialog.Filter = "All files (*.*)|*.*";
+
+            /* This option appears after the user has clicked on a file. It will give them 
+             * the option to choose OK or Cancel. */
+            openResult = openFileDialog.ShowDialog();
+
+            /* The following is a conditional if statement. It is checking if the user chose
+             * OK and making sure that the filename is not null or empty. */
+            if (openResult == DialogResult.OK && !string.IsNullOrEmpty(openFileDialog.FileName)) 
+            {
+                /* This will add the filename into a string variable called filePath. 
+                 * I used this variable to create a new attachment so that I can add
+                 * that to the MailMessage above. This will also display the chosen
+                 * filename on the form. */
+                filePath = openFileDialog.FileName;
+                lblAttachment.Text = filePath;
+                attachment = new Attachment(filePath);
+                mailMessage.Attachments.Add(attachment);
+            }
+        }
+    }
+}

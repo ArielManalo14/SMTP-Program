@@ -1,0 +1,216 @@
+﻿/* Ariel Manalo
+ * Skill Test */
+
+namespace WFSCSkill1
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblContactUs = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.tbUserName = new System.Windows.Forms.TextBox();
+            this.lblUserEmail = new System.Windows.Forms.Label();
+            this.tbUserEmail = new System.Windows.Forms.TextBox();
+            this.lblUserNotes = new System.Windows.Forms.Label();
+            this.tbUserNotes = new System.Windows.Forms.TextBox();
+            this.lblUserAttach = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.lblOutput = new System.Windows.Forms.Label();
+            this.btnAttach = new System.Windows.Forms.Button();
+            this.lblAttachment = new System.Windows.Forms.Label();
+            this.lblShowAttach = new System.Windows.Forms.Label();
+            this.lblSentStatus = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblContactUs
+            // 
+            this.lblContactUs.AutoSize = true;
+            this.lblContactUs.Location = new System.Drawing.Point(344, 39);
+            this.lblContactUs.Name = "lblContactUs";
+            this.lblContactUs.Size = new System.Drawing.Size(118, 25);
+            this.lblContactUs.TabIndex = 0;
+            this.lblContactUs.Text = "Contact Us";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(123, 99);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(131, 25);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "Enter Name:";
+            // 
+            // tbUserName
+            // 
+            this.tbUserName.Location = new System.Drawing.Point(321, 92);
+            this.tbUserName.Name = "tbUserName";
+            this.tbUserName.Size = new System.Drawing.Size(300, 31);
+            this.tbUserName.TabIndex = 2;
+            // 
+            // lblUserEmail
+            // 
+            this.lblUserEmail.AutoSize = true;
+            this.lblUserEmail.Location = new System.Drawing.Point(123, 148);
+            this.lblUserEmail.Name = "lblUserEmail";
+            this.lblUserEmail.Size = new System.Drawing.Size(128, 25);
+            this.lblUserEmail.TabIndex = 3;
+            this.lblUserEmail.Text = "Enter Email:";
+            // 
+            // tbUserEmail
+            // 
+            this.tbUserEmail.Location = new System.Drawing.Point(321, 142);
+            this.tbUserEmail.Name = "tbUserEmail";
+            this.tbUserEmail.Size = new System.Drawing.Size(300, 31);
+            this.tbUserEmail.TabIndex = 4;
+            // 
+            // lblUserNotes
+            // 
+            this.lblUserNotes.AutoSize = true;
+            this.lblUserNotes.Location = new System.Drawing.Point(123, 191);
+            this.lblUserNotes.Name = "lblUserNotes";
+            this.lblUserNotes.Size = new System.Drawing.Size(131, 25);
+            this.lblUserNotes.TabIndex = 5;
+            this.lblUserNotes.Text = "Enter Notes:";
+            // 
+            // tbUserNotes
+            // 
+            this.tbUserNotes.Location = new System.Drawing.Point(321, 188);
+            this.tbUserNotes.Name = "tbUserNotes";
+            this.tbUserNotes.Size = new System.Drawing.Size(300, 31);
+            this.tbUserNotes.TabIndex = 6;
+            // 
+            // lblUserAttach
+            // 
+            this.lblUserAttach.AutoSize = true;
+            this.lblUserAttach.Location = new System.Drawing.Point(123, 239);
+            this.lblUserAttach.Name = "lblUserAttach";
+            this.lblUserAttach.Size = new System.Drawing.Size(183, 25);
+            this.lblUserAttach.TabIndex = 7;
+            this.lblUserAttach.Text = "Enter Attachment:";
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(128, 420);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(116, 44);
+            this.btnSend.TabIndex = 10;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // lblOutput
+            // 
+            this.lblOutput.AutoSize = true;
+            this.lblOutput.Location = new System.Drawing.Point(269, 490);
+            this.lblOutput.Name = "lblOutput";
+            this.lblOutput.Size = new System.Drawing.Size(24, 25);
+            this.lblOutput.TabIndex = 11;
+            //this.lblOutput.Text = "h";
+            // 
+            // btnAttach
+            // 
+            this.btnAttach.Location = new System.Drawing.Point(321, 236);
+            this.btnAttach.Name = "btnAttach";
+            this.btnAttach.Size = new System.Drawing.Size(155, 73);
+            this.btnAttach.TabIndex = 12;
+            this.btnAttach.Text = "Add Attachment";
+            this.btnAttach.UseVisualStyleBackColor = true;
+            this.btnAttach.Click += new System.EventHandler(this.btnAttach_Click);
+            // 
+            // lblAttachment
+            // 
+            this.lblAttachment.AutoSize = true;
+            this.lblAttachment.Location = new System.Drawing.Point(123, 373);
+            this.lblAttachment.Name = "lblAttachment";
+            this.lblAttachment.Size = new System.Drawing.Size(24, 25);
+            this.lblAttachment.TabIndex = 13;
+            //this.lblAttachment.Text = "o";
+            // 
+            // lblShowAttach
+            // 
+            this.lblShowAttach.AutoSize = true;
+            this.lblShowAttach.Location = new System.Drawing.Point(123, 336);
+            this.lblShowAttach.Name = "lblShowAttach";
+            this.lblShowAttach.Size = new System.Drawing.Size(212, 25);
+            this.lblShowAttach.TabIndex = 14;
+            this.lblShowAttach.Text = "Attachment Chosen: ";
+            // 
+            // lblSentStatus
+            // 
+            this.lblSentStatus.AutoSize = true;
+            this.lblSentStatus.Location = new System.Drawing.Point(128, 490);
+            this.lblSentStatus.Name = "lblSentStatus";
+            this.lblSentStatus.Size = new System.Drawing.Size(135, 25);
+            this.lblSentStatus.TabIndex = 15;
+            this.lblSentStatus.Text = "Sent Status: ";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(896, 571);
+            this.Controls.Add(this.lblSentStatus);
+            this.Controls.Add(this.lblShowAttach);
+            this.Controls.Add(this.lblAttachment);
+            this.Controls.Add(this.btnAttach);
+            this.Controls.Add(this.lblOutput);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.lblUserAttach);
+            this.Controls.Add(this.tbUserNotes);
+            this.Controls.Add(this.lblUserNotes);
+            this.Controls.Add(this.tbUserEmail);
+            this.Controls.Add(this.lblUserEmail);
+            this.Controls.Add(this.tbUserName);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.lblContactUs);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblContactUs;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.TextBox tbUserName;
+        private System.Windows.Forms.Label lblUserEmail;
+        private System.Windows.Forms.TextBox tbUserEmail;
+        private System.Windows.Forms.Label lblUserNotes;
+        private System.Windows.Forms.TextBox tbUserNotes;
+        private System.Windows.Forms.Label lblUserAttach;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Label lblOutput;
+        private System.Windows.Forms.Button btnAttach;
+        private System.Windows.Forms.Label lblAttachment;
+        private System.Windows.Forms.Label lblShowAttach;
+        private System.Windows.Forms.Label lblSentStatus;
+    }
+}
+
